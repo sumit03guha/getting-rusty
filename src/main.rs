@@ -1,3 +1,4 @@
+use core::num;
 use std::io;
 use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
@@ -25,6 +26,33 @@ fn main() {
     age = age + 1;
 
     print!("I am {} and I want {}", age, ONE_MIL);
+
+    // Data types //
+
+    // Unsigned integers - u8, u16, u32, u64, u128, usize
+    // Signed integers - i8, i16, i32, i64, i128, isize
+
+    print!("MAX u32: {} ", u8::MAX);
+    print!("MAX usize: {} ", usize::MAX);
+    print!("MAX f32: {} ", f32::MAX);
+
+    let is_true = true;
+    let my_grade = 'A';
+
+    let num_1: f32 = 1.111111111111111;
+    print!("f32 is : {} ", num_1 + 0.111111111111111);
+
+    let num_2: f64 = 1.111111111111111;
+    print!("f64 is : {} ", num_2 + 0.111111111111111);
+
+    let mut num_3 = 12;
+    num_3 += 3;
+    print!("num_3 is {}", num_3);
+
+    let random_num = rand::thread_rng().gen_range(1..101);
+    print!("Random: {}", random_num);
+
+    
 
 
 }
