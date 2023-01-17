@@ -52,7 +52,42 @@ fn main() {
     let random_num = rand::thread_rng().gen_range(1..101);
     print!("Random: {}", random_num);
 
-    
+    let age:i32 = 8;
 
+    if (age >=1) && (age <= 18) {
+        print!("Important birthday");
+    } else if (age == 21) || (age == 50) {
+        print!("Important birthday");
+    } else if (age >= 65) {
+        print!("Important birthday");
+    } else {
+        print!("Not important birthday");
+    }
+
+    let mut my_age = 47;
+    let can_vote = if my_age >= 18 {
+        true
+    } else {
+        false
+    };
+
+    print!("can vote: {}", can_vote);
+
+    let age2 = 8;
+    match age2 {
+        1..=18 => print!("Important birthday"),
+        21 | 50 => print!("Important birthday"),
+        65..=i32::MAX => print!("Important birthday"),
+        _ => print!("Not important")
+    };
+
+    let my_age = 18;
+    let voting_age = 18;
+
+    match my_age.cmp(&voting_age) {
+        Ordering::Less => print!("can't vote"),
+        Ordering::Greater => print!("can vote"),
+        Ordering::Equal => print!("gained the right to vote")
+    };
 
 }
