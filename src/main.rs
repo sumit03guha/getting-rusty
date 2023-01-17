@@ -90,4 +90,36 @@ fn main() {
         Ordering::Equal => print!("gained the right to vote")
     };
 
+    let arr_1 = [1,2,3,4,5];
+
+    print!("1st: {}", arr_1[0]);
+    print!("lenght: {}", arr_1.len());
+
+    // loop
+
+    let mut loop_index = 0;
+    loop {
+        if arr_1[loop_index] % 2 == 0 {
+            loop_index += 1;
+            continue;
+        }
+        if arr_1[loop_index] == 5 {
+            break;
+        }
+        print!("Val : {}",arr_1[loop_index]);
+        loop_index += 1;
+    }
+
+    let mut while_loop_idx = 0;
+
+    while (while_loop_idx < arr_1.len()) {
+        print!("VaL : {}",arr_1[while_loop_idx]);
+        while_loop_idx += 1;
+    }
+
+    for val in arr_1 {
+        print!("VAL : {}", val);
+    }
+
+
 }
