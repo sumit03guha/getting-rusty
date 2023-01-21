@@ -121,5 +121,12 @@ fn main() {
         print!("VAL : {}", val);
     }
 
+    let my_tuple: (u8, String, f64) = (47, "Sumit".to_string(), 50_000.00);
+    print!("Name: {}", my_tuple.1);
+    let(v1, v2, v3) = my_tuple;
+    print!("Age : {}", my_tuple.0);
+
+    
+
 
 }
