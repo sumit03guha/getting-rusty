@@ -25,43 +25,43 @@ fn main() {
 
     age = age + 1;
 
-    print!("I am {} and I want {}", age, ONE_MIL);
+    println!("I am {} and I want {}", age, ONE_MIL);
 
     // Data types //
 
     // Unsigned integers - u8, u16, u32, u64, u128, usize
     // Signed integers - i8, i16, i32, i64, i128, isize
 
-    print!("MAX u32: {} ", u8::MAX);
-    print!("MAX usize: {} ", usize::MAX);
-    print!("MAX f32: {} ", f32::MAX);
+    println!("MAX u32: {} ", u8::MAX);
+    println!("MAX usize: {} ", usize::MAX);
+    println!("MAX f32: {} ", f32::MAX);
 
     let is_true = true;
     let my_grade = 'A';
 
     let num_1: f32 = 1.111111111111111;
-    print!("f32 is : {} ", num_1 + 0.111111111111111);
+    println!("f32 is : {} ", num_1 + 0.111111111111111);
 
     let num_2: f64 = 1.111111111111111;
-    print!("f64 is : {} ", num_2 + 0.111111111111111);
+    println!("f64 is : {} ", num_2 + 0.111111111111111);
 
     let mut num_3 = 12;
     num_3 += 3;
-    print!("num_3 is {}", num_3);
+    println!("num_3 is {}", num_3);
 
     let random_num = rand::thread_rng().gen_range(1..101);
-    print!("Random: {}", random_num);
+    println!("Random: {}", random_num);
 
     let age:i32 = 8;
 
     if (age >=1) && (age <= 18) {
-        print!("Important birthday");
+        println!("Important birthday");
     } else if (age == 21) || (age == 50) {
-        print!("Important birthday");
+        println!("Important birthday");
     } else if (age >= 65) {
-        print!("Important birthday");
+        println!("Important birthday");
     } else {
-        print!("Not important birthday");
+        println!("Not important birthday");
     }
 
     let mut my_age = 47;
@@ -71,29 +71,29 @@ fn main() {
         false
     };
 
-    print!("can vote: {}", can_vote);
+    println!("can vote: {}", can_vote);
 
     let age2 = 8;
     match age2 {
-        1..=18 => print!("Important birthday"),
-        21 | 50 => print!("Important birthday"),
-        65..=i32::MAX => print!("Important birthday"),
-        _ => print!("Not important")
+        1..=18 => println!("Important birthday"),
+        21 | 50 => println!("Important birthday"),
+        65..=i32::MAX => println!("Important birthday"),
+        _ => println!("Not important")
     };
 
     let my_age = 18;
     let voting_age = 18;
 
     match my_age.cmp(&voting_age) {
-        Ordering::Less => print!("can't vote"),
-        Ordering::Greater => print!("can vote"),
-        Ordering::Equal => print!("gained the right to vote")
+        Ordering::Less => println!("can't vote"),
+        Ordering::Greater => println!("can vote"),
+        Ordering::Equal => println!("gained the right to vote")
     };
 
     let arr_1 = [1,2,3,4,5];
 
-    print!("1st: {}", arr_1[0]);
-    print!("lenght: {}", arr_1.len());
+    println!("1st: {}", arr_1[0]);
+    println!("lenght: {}", arr_1.len());
 
     // loop
 
@@ -106,27 +106,63 @@ fn main() {
         if arr_1[loop_index] == 5 {
             break;
         }
-        print!("Val : {}",arr_1[loop_index]);
+        println!("Val : {}",arr_1[loop_index]);
         loop_index += 1;
     }
 
     let mut while_loop_idx = 0;
 
     while (while_loop_idx < arr_1.len()) {
-        print!("VaL : {}",arr_1[while_loop_idx]);
+        println!("VaL : {}",arr_1[while_loop_idx]);
         while_loop_idx += 1;
     }
 
     for val in arr_1 {
-        print!("VAL : {}", val);
+        println!("VAL : {}", val);
     }
 
     let my_tuple: (u8, String, f64) = (47, "Sumit".to_string(), 50_000.00);
-    print!("Name: {}", my_tuple.1);
+    println!("Name: {}", my_tuple.1);
     let(v1, v2, v3) = my_tuple;
-    print!("Age : {}", my_tuple.0);
+    println!("Age : {}", my_tuple.0);
 
-    
+    let mut st1 = String::new();
+    st1.push('A');
+    st1.push_str(" word");
 
+    for word in st1.split_whitespace() {
+        println!("{}",word);
+    }
+    let st2 = st1.replace("A", "another");
+    println!("{}",st2);
+
+    let st3 = String::from("x r t b kk l og f c a f");
+    let mut v1: Vec<char> = st3.chars().collect();
+    v1.sort();
+    v1.dedup();
+
+    for char in v1 {
+        println!("{}", char);
+    }
+
+    let st4: &str = "Random string";
+    let mut st5: String = st4.to_string();
+    println!("{}", st5);
+
+    let byte_arr1 = st5.as_bytes();
+    let st6 = &st5[0..6];
+    println!("String length : {}", st6.len());
+    st5.clear();
+
+    let st6 = String::from("just some");
+    let st7 = String::from(" words");
+    let st8 = st6 + &st7;
+
+    println!("st7 : {}", st7);
+    println!("st8 : {}", st8);
+
+    for char in st8.bytes() {
+        println!("{}", char);
+    }
 
 }
