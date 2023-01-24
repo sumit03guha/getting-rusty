@@ -4,6 +4,7 @@ use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
+use std::ops::Add;
 
 fn main() {
     println!("What is your name?");
@@ -248,6 +249,8 @@ fn main() {
 
     println!("sum : {}", sum_res);
 
+    println!("5.1 + 1.2 = {}", get_sum_gen(5.1, 1.2));
+
 }
 
 fn say_hello() {
@@ -274,4 +277,9 @@ fn sum_list(list:Vec<i32>) -> i32 {
     }
     
     return sum;
+}
+
+// generics
+fn get_sum_gen<T:Add<Output = T>>(x: T, y: T) -> T {
+    return x + y;
 }
