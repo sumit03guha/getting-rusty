@@ -229,4 +229,49 @@ fn main() {
     println!("vec len {}", vec2.len());
     println!("pop : {:?}", vec2.pop());
 
+    say_hello();
+
+    get_sum(4, 2);
+    
+    let result:i32 = get_sum_2(12, 12);
+    println!("result = {}", result);
+
+    let values : (i32, i32) = get_2(12);
+    let (val_1, val_2) = get_2(12);
+    println!("{}", values.0);
+    println!("{}", values.1);
+    println!("val_1 : {}", val_1);
+    println!("val_2 : {}", val_2);
+
+    let num_list = vec![1,2,3,4,5];
+    let sum_res = sum_list(num_list);
+
+    println!("sum : {}", sum_res);
+
+}
+
+fn say_hello() {
+    println!("Hello");
+}
+
+fn get_sum(x:i32, y:i32) {
+    println!("{} + {} = {}", x, y, x + y);
+}
+
+fn get_sum_2(x:i32, y:i32) -> i32 {
+    return x + y;
+}
+
+fn get_2(x:i32) -> (i32, i32) {
+    return (x + 1, x + 23);
+}
+
+fn sum_list(list:Vec<i32>) -> i32 {
+    let mut sum = 0;
+
+    for val in list.iter() {
+        sum += val;
+    }
+    
+    return sum;
 }
