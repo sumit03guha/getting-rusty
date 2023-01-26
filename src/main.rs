@@ -271,6 +271,51 @@ fn main() {
         }
     }
 
+    struct Customer {
+        name: String,
+        address: String,
+        balance: u128,
+    }
+
+    let mut bob = Customer {
+        name: String::from("Bob Smith"),
+        address: String::from("Bandel"),
+        balance: 234,
+    };
+
+    bob.address = String::from("Hooghly");
+
+    struct Rectangle<T, U> {
+        length: T,
+        height: U,
+    }
+
+    let rect = Rectangle {
+        length: 44,
+        height:12,
+    };
+
+    trait Shape {
+        fn new(length: f32, width: f32) -> Self;
+        fn area(&self) -> f32;
+    }
+
+    struct Circle {
+        diameter: f32,
+    }
+
+    impl Shape for Circle {
+        fn new(diameter: f32, width: f32) -> Circle {
+            return Circle{diameter};
+        }
+
+        fn area(&self) -> f32 {
+            return (self.diameter / 2.0).powf(2.0)* PI;
+        }
+    }
+
+    let circ: Circle = Shape::new(10.0, 10.0);
+    println!("Area of circle : {}", circ.area());
 
 }
 
