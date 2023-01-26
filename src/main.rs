@@ -5,6 +5,7 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 use std::ops::Add;
+use std::collections::HashMap;
 
 fn main() {
     println!("What is your name?");
@@ -251,6 +252,26 @@ fn main() {
 
     println!("5.1 + 1.2 = {}", get_sum_gen(5.1, 1.2));
 
+    let mut heroes = HashMap::new();
+    heroes.insert("superman", "Clark Kent");
+    heroes.insert("Batman", "Bruce Wayne");
+    heroes.insert("The Flash", "Barry Allen");
+
+    for (k,v) in heroes.iter() {
+        println!("{} = {}", k, v);
+    }
+
+    println!("Length : {}", heroes.len());
+
+    if heroes.contains_key("Batman") {
+        let the_batman = heroes.get("Batman");
+        match the_batman {
+            Some(x) => println!("Batman is a hero"),
+            None => println!("Batman is not a hero"),
+        }
+    }
+
+
 }
 
 fn say_hello() {
@@ -283,3 +304,5 @@ fn sum_list(list:Vec<i32>) -> i32 {
 fn get_sum_gen<T:Add<Output = T>>(x: T, y: T) -> T {
     return x + y;
 }
+
+
