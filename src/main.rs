@@ -7,6 +7,9 @@ use std::cmp::Ordering;
 use std::ops::Add;
 use std::collections::HashMap;
 
+mod restaurant;
+use crate::restaurant::order_food;
+
 fn main() {
     println!("What is your name?");
 
@@ -316,6 +319,8 @@ fn main() {
 
     let circ: Circle = Shape::new(10.0, 10.0);
     println!("Area of circle : {}", circ.area());
+
+    order_food();
 
 }
 
